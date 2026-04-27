@@ -10,8 +10,8 @@
 
 - Student Name Surname: [Write your full name]
 - Student Number: [Write your student number]
-- GitHub Username: [Write your GitHub username]
-- Public GitHub Repository Link: [Paste repository URL]
+- GitHub Username: Feras-Arkan
+- Public GitHub Repository Link: https://github.com/Feras-Arkan/personal-budget-tracker.git
 
 ---
 
@@ -217,8 +217,8 @@ These challenges improved the quality of the final application and helped me bet
 
 ## 9) GitHub Username and Public Repository Link
 
-- GitHub Username: [Write your username]
-- Public Repository Link: [Paste your public repo URL]
+- GitHub Username: Feras-Arkan
+- Public Repository Link: https://github.com/Feras-Arkan/personal-budget-tracker.git
 
 I used GitHub to track project versions and backup my code. A public repository allows the instructor to review implementation details and commit history.
 
