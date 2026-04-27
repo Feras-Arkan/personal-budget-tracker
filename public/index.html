@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Budget Tracker</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Personal Budget Tracker</h1>
+      <p>Track income and expenses with categories and filters.</p>
+    </header>
+
+    <main class="container app-grid">
+      <section class="card">
+        <h2>Add Transaction</h2>
+        <form id="transactionForm" class="form-grid">
+          <input id="editId" name="editId" type="hidden" />
+          <div>
+            <label for="type">Type</label>
+            <select id="type" name="type" required>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <div>
+            <label for="amount">Amount</label>
+            <input
+              id="amount"
+              name="amount"
+              type="number"
+              min="0.01"
+              step="0.01"
+              placeholder="e.g. 250.75"
+              required
+            />
+          </div>
+          <div>
+            <label for="category">Category</label>
+            <input
+              id="category"
+              name="category"
+              type="text"
+              placeholder="e.g. Food, Salary, Rent"
+              required
+            />
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required />
+          </div>
+          <div class="full-width">
+            <label for="note">Note (Optional)</label>
+            <input
+              id="note"
+              name="note"
+              type="text"
+              placeholder="Small description"
+            />
+          </div>
+          <button id="submitBtn" type="submit" class="btn">Add Transaction</button>
+          <button id="cancelEditBtn" type="button" class="btn btn-secondary hidden">
+            Cancel Edit
+          </button>
+        </form>
+        <p id="formMessage" class="message" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>Filters</h2>
+        <div class="filters-grid">
+          <div>
+            <label for="filterType">Type</label>
+            <select id="filterType">
+              <option value="">All</option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <div>
+            <label for="filterCategory">Category</label>
+            <input id="filterCategory" type="text" placeholder="Any category" />
+          </div>
+          <div>
+            <label for="filterDateFrom">Date From</label>
+            <input id="filterDateFrom" type="date" />
+          </div>
+          <div>
+            <label for="filterDateTo">Date To</label>
+            <input id="filterDateTo" type="date" />
+          </div>
+          <button id="clearFiltersBtn" type="button" class="btn btn-secondary">
+            Clear Filters
+          </button>
+        </div>
+      </section>
+
+      <section class="card full-span">
+        <h2>Transactions</h2>
+        <div id="summary" class="summary-row"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Note</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="transactionsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Expense by Category</h2>
+        <canvas id="expenseByCategoryChart" aria-label="Expense by category chart"></canvas>
+      </section>
+
+      <section class="card">
+        <h2>Income vs Expense</h2>
+        <canvas id="incomeExpenseChart" aria-label="Income versus expense chart"></canvas>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
